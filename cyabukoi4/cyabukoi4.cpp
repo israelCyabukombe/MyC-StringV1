@@ -14,13 +14,12 @@
 #include <cstdlib>
 #include<cstring>
 
-namespace StringNS{
-
+namespace StringNS {
 	/********************************************************************
 	*** FUNCTION : constructor
 	*********************************************************************
 	*** DESCRIPTION : default  parametized consructor that creates a string 346 from the passed in char*
-	*** INPUT ARGS : inStr 
+	*** INPUT ARGS : inStr
 	*** OUTPUT ARGS :none
 	*** IN/OUT ARGS :none
 	*** RETURN : nothing
@@ -45,16 +44,14 @@ namespace StringNS{
 				}
 			}
 		}
-		
-		//Test New
-		
 
+		//Test New
 	}
 
 	/********************************************************************
 	*** FUNCTION : copy constructor
 	*********************************************************************
-	*** DESCRIPTION : It accepts an instance of a class String and then it 
+	*** DESCRIPTION : It accepts an instance of a class String and then it
 					  reuses the copy function with the invoking instance( this)
 	*** INPUT ARGS : copiedStr- the object to be copied
 	*** OUTPUT ARGS :none
@@ -64,14 +61,13 @@ namespace StringNS{
 
 	String346::String346(const String346 &copiedStr) :data(NULL), size(0)
 	{
-	
 		copy(copiedStr);
 	}
 
 	/********************************************************************
 	*** FUNCTION : destructor
 	*********************************************************************
-	*** DESCRIPTION : reuses destroy to free memory of the String class 
+	*** DESCRIPTION : reuses destroy to free memory of the String class
 	*** INPUT ARGS : none
 	*** OUTPUT ARGS :none
 	*** IN/OUT ARGS :none
@@ -82,11 +78,11 @@ namespace StringNS{
 		destroy();
 	}
 	/********************************************************************
-	*** FUNCTION : copy 
+	*** FUNCTION : copy
 	*********************************************************************
 	*** DESCRIPTION : accepts and instance and copies it in the invoking
 					  instance access through the this pointer
-	*** INPUT ARGS : cop 
+	*** INPUT ARGS : cop
 	*** OUTPUT ARGS :
 	*** IN/OUT ARGS :
 	*** RETURN : (*this)
@@ -111,12 +107,12 @@ namespace StringNS{
 		return (*this);
 	}
 	/********************************************************************
-	*** FUNCTION : copy 
+	*** FUNCTION : copy
 	*********************************************************************
-	*** DESCRIPTION : it copies a passed in char string into the String 
+	*** DESCRIPTION : it copies a passed in char string into the String
 					  class instance
 	*** INPUT ARGS  : char * inStr1
-	*** OUTPUT ARGS : 
+	*** OUTPUT ARGS :
 	*** IN/OUT ARGS :
 	*** RETURN : (*this) invoking class
 	********************************************************************/
@@ -130,7 +126,7 @@ namespace StringNS{
 	/********************************************************************
 	*** FUNCTION : concat
 	*********************************************************************
-	*** DESCRIPTION : concatinates a string from passedin object to the current 
+	*** DESCRIPTION : concatinates a string from passedin object to the current
 					  string inside the invoking class reuses destroy and constructor
 	*** INPUT ARGS : String346 & cop
 	*** OUTPUT ARGS :none
@@ -144,7 +140,7 @@ namespace StringNS{
 		unsigned int j = 0;
 		String346 Temp(*this);
 		destroy();
-		
+
 		size = Temp.getSize() + cop.getSize();
 		data = new(nothrow) char[getSize()];
 		for (i; i < Temp.getSize(); i++)
@@ -171,7 +167,6 @@ namespace StringNS{
 	********************************************************************/
 	String346 & String346::concat(const char *inStr2)
 	{
-	
 		String346 Temp(inStr2);
 
 		(*this).concat(Temp);
@@ -182,11 +177,11 @@ namespace StringNS{
 	*** FUNCTION :lessThan
 	*********************************************************************
 	*** DESCRIPTION : compares the passed in obj's string to the invocation
-				      string 
+					  string
 	*** INPUT ARGS :String346 & copy
 	*** OUTPUT ARGS :
 	*** IN/OUT ARGS :
-	*** RETURN : boolean 
+	*** RETURN : boolean
 	********************************************************************/
 	bool String346::lessThan(const String346 & copy)const
 	{
@@ -196,12 +191,12 @@ namespace StringNS{
 		{
 			loopsize = (copy).getSize();
 		}
-		else{
+		else {
 			loopsize = (*this).getSize();
 		}
 		for (unsigned int i = 0; i < loopsize; i++)
 		{
-			if ((*this).data[i]<copy.data[i])   // if the invoking instance(this) is less than passed in instance 
+			if ((*this).data[i] < copy.data[i])   // if the invoking instance(this) is less than passed in instance
 			{
 				c = true;
 			}
@@ -215,12 +210,12 @@ namespace StringNS{
 	/********************************************************************
 	*** FUNCTION :lessThan
 	*********************************************************************
-	*** DESCRIPTION : Recieves a char * string and resuses concat (obj) and 
+	*** DESCRIPTION : Recieves a char * string and resuses concat (obj) and
 					  the constructor by instatiating a temporary instance
 	*** INPUT ARGS :char * inStr3
 	*** OUTPUT ARGS :
 	*** IN/OUT ARGS :
-	*** RETURN : bolean 
+	*** RETURN : bolean
 	********************************************************************/
 	bool String346::lessThan(const char * inStr3)const
 	{
@@ -241,12 +236,12 @@ namespace StringNS{
 	bool String346::greaterThan(const String346 & pInst)const
 	{
 		bool b;
-		if (lessThan(pInst) == false && pInst.lessThan(*this)==true)
+		if (lessThan(pInst) == false && pInst.lessThan(*this) == true)
 		{
 			b = true;
 			//return(*this).lessThan(pInst);
 		}
-		else 
+		else
 		{
 			b = false;
 			//return(pInst.lessThan(*this));
@@ -256,8 +251,8 @@ namespace StringNS{
 	/********************************************************************
 	*** FUNCTION : greaterThan
 	*********************************************************************
-	*** DESCRIPTION : reuses the greaterThan( Obj) function to create the 
-			          the string and compare a passed in string with the
+	*** DESCRIPTION : reuses the greaterThan( Obj) function to create the
+					  the string and compare a passed in string with the
 					  invocation class string
 	*** INPUT ARGS :char *inStr4
 	*** OUTPUT ARGS :
@@ -273,8 +268,8 @@ namespace StringNS{
 	/********************************************************************
 	*** FUNCTION :equal
 	*********************************************************************
-	*** DESCRIPTION : resuses lessThan and greater than to compare two obj 
-				      strings, return true if there equal and otherwise it 
+	*** DESCRIPTION : resuses lessThan and greater than to compare two obj
+					  strings, return true if there equal and otherwise it
 					  returns false
 	*** INPUT ARGS :String346 & cop
 	*** OUTPUT ARGS :
@@ -298,7 +293,7 @@ namespace StringNS{
 	/********************************************************************
 	*** FUNCTION :char*inStr5
 	*********************************************************************
-	*** DESCRIPTION : reuses the above equal function by creating a string 
+	*** DESCRIPTION : reuses the above equal function by creating a string
 					  from the passed in char * string
 	*** INPUT ARGS :char*inStr5
 	*** OUTPUT ARGS :
@@ -310,8 +305,7 @@ namespace StringNS{
 		bool b;
 		String346 Temp(inStr5);
 		b = (*this).equal(Temp);
-		return b ;
-
+		return b;
 	}
 	/********************************************************************
 	*** FUNCTION : view()
@@ -334,17 +328,16 @@ namespace StringNS{
 	*** FUNCTION : decrement()
 	*********************************************************************
 	*** DESCRIPTION : reduces the current string to the lower string according
-					  the characters ASCII values, char by character 
+					  the characters ASCII values, char by character
 	*** INPUT ARGS : none
 	*** OUTPUT ARGS :none
 	*** IN/OUT ARGS :nothing
 	*** RETURN : (*this)
 	********************************************************************/
-	String346 & String346::decrement(){
-
+	String346 & String346::decrement() {
 		for (unsigned int i = 0; i < getSize(); i++)
 		{
-			data[i] =--data[i];
+			data[i] = --data[i];
 		}
 		return(*this);
 	}
@@ -361,7 +354,6 @@ namespace StringNS{
 
 	void String346::destroy()
 	{
-		
 		delete[] data;
 		data = NULL;
 		size = 0;

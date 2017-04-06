@@ -5,16 +5,15 @@
 *** DUE DATE : 3/30/2016
 *** INSTRUCTOR : GAMRADT
 *********************************************************************
-*** DESCRIPTION :This header file will defines a String346 class 
+*** DESCRIPTION :This header file will defines a String346 class
 				 with class implementation that will operate as the
 				 C++ string
 *******************************************************************/
 
-
 #ifndef _CYABUKOI4_H
 #define _CYABUKOI4_H
 
-namespace StringNS{
+namespace StringNS {
 	class String346 {
 	public:
 		/********************************************************************
@@ -61,7 +60,7 @@ namespace StringNS{
 		/********************************************************************
 		*** FUNCTION : copy
 		*********************************************************************
-		*** DESCRIPTION : accepts an instance and copies the string into the 
+		*** DESCRIPTION : accepts an instance and copies the string into the
 						  invonking class string
 		*** INPUT ARGS : String Obj
 		*** OUTPUT ARGS :
@@ -84,7 +83,7 @@ namespace StringNS{
 		*** FUNCTION : concat
 		*********************************************************************
 		*** DESCRIPTION : concatinates a string from passedin object to the current
-					      string inside the invoking class
+						  string inside the invoking class
 		*** INPUT ARGS : String346 & obj
 		*** OUTPUT ARGS :none
 		*** IN/OUT ARGS :none
@@ -115,7 +114,7 @@ namespace StringNS{
 		/********************************************************************
 		*** FUNCTION : lessThan
 		*********************************************************************
-		*** DESCRIPTION : compares the passed in char* string to the invoking 
+		*** DESCRIPTION : compares the passed in char* string to the invoking
 						  class string and return true or false
 		*** INPUT ARGS : char *
 		*** OUTPUT ARGS :
@@ -133,7 +132,7 @@ namespace StringNS{
 		*** OUTPUT ARGS :
 		*** IN/OUT ARGS :
 		*** RETURN : boolean
-		********************************************************************/ 
+		********************************************************************/
 		bool greaterThan(const String346 &)const;
 		/********************************************************************
 		*** FUNCTION : greaterThan
@@ -172,7 +171,7 @@ namespace StringNS{
 		/********************************************************************
 		*** FUNCTION : decrement()
 		*********************************************************************
-		*** DESCRIPTION : reduces the current string to a lower string according 
+		*** DESCRIPTION : reduces the current string to a lower string according
 						  AScii valuew
 		*** INPUT ARGS : none
 		*** OUTPUT ARGS :none
@@ -200,17 +199,15 @@ namespace StringNS{
 	*** FUNCTION : getSize()
 	*********************************************************************
 	*** DESCRIPTION : returns the current size of the String when a constructor
-				      is invoked or when the size is changed
+					  is invoked or when the size is changed
 	*** INPUT ARGS : none
 	*** OUTPUT ARGS :none
 	*** IN/OUT ARGS :none
 	*** RETURN :size
 	********************************************************************/
-	inline unsigned int String346::getSize() const{
+	inline unsigned int String346::getSize() const {
 		return  size;
 	}
-
-
 }
 
 #endif // _CYABUKOI4_H
